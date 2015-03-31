@@ -20,6 +20,7 @@ PsyDancer.prototype.step = function(){
   var randHeight = Math.ceil(Math.random() * 50);
 
   var styles = {
+    'background-color' : "rgb("+ randRed + ',' + randGreen + ',' + randBlue + ')',
     'border-color' : "rgb("+ randRed + ',' + randGreen + ',' + randBlue + ')',
     width: randWidth+"px",
     height: randHeight+"px"
