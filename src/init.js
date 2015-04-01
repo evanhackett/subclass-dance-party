@@ -23,12 +23,19 @@ $(document).ready(function(){
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
+      ($("body").height() * Math.random())+25,
       $("body").width() * Math.random(),
       Math.random() * 1000, 'Assets/' + gifArray[Math.ceil(Math.random()*gifArray.length-1)]
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
+
+    if (dancer instanceof MouseDancer) {
+      $('.mouseDancer').on('mouseenter', function() {
+        dancer.mouseOver();
+      });
+    }
+
 
   });
 
@@ -42,5 +49,4 @@ $(document).ready(function(){
     }
     
   });
-
 });
